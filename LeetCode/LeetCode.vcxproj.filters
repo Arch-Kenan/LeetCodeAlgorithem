@@ -18,6 +18,9 @@
     <ClInclude Include="pch.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -27,6 +30,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="剑指offer_36题.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetCode64.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
