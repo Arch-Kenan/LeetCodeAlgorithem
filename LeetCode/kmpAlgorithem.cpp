@@ -30,6 +30,7 @@ int kmpAlgorithem(const char*  target, const char* pattern)
 {
 	int p = 0;
 	int q = 0;
+	//需要注意 strlen()函数返回的是size_t类型
 	int LenTar = strlen(target);
 	int lenPat = strlen(pattern);
 	int* next = new int[lenPat];
