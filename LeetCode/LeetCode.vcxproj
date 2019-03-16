@@ -155,6 +155,7 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="kmpAlgorithem.cpp" />
     <ClCompile Include="LeetCode.cpp" />
     <ClCompile Include="LeetCode64.cpp" />
     <ClCompile Include="pch.cpp">

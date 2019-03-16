@@ -58,11 +58,11 @@ public:
 };
 
 
-int main()
-{
-	vector<vector<int> > arrs = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
-
-	int result = Solution().minPathSum(arrs);
-	cout << result << endl;
-	return 0;
-}
+//int main()
+//{
+//	vector<vector<int> > arrs = {{1, 3, 1}, {1, 5, 1}, {4, 2, 1}};
+//
+//	int result = Solution().minPathSum(arrs);
+//	cout << result << endl;
+//	return 0;
+//}

@@ -35,5 +35,8 @@
     <ClCompile Include="LeetCode64.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="kmpAlgorithem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
