@@ -38,5 +38,8 @@
     <ClCompile Include="kmpAlgorithem.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="分支测试函数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
