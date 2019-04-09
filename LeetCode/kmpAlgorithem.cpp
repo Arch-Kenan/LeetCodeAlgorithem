@@ -54,12 +54,12 @@ int kmpAlgorithem(const char*  target, const char* pattern)
 		return -1;
 }
 
-
-int main()
-{
-	const char*   cha = "BBCABCDABABCDABCDABDE";
-	const char*   fuck = "ABCDABD";
-	int result = kmpAlgorithem(cha, fuck);
-	cout << result << endl;
-	return 0;
-}
+//
+//int main()
+//{
+//	const char*   cha = "BBCABCDABABCDABCDABDE";
+//	const char*   fuck = "ABCDABD";
+//	int result = kmpAlgorithem(cha, fuck);
+//	cout << result << endl;
+//	return 0;
+//}
