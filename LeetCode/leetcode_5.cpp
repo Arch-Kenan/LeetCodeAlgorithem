@@ -7,42 +7,63 @@
 
 #include "common.h"
 
-bool isPalindrome(const string& str, size_t low, size_t high)
+void isPalindrome(const string& str, int low, int high, int& pStart, int& pEnd)
 {
-	while (low <= high)
+	int length = str.size();
+
+	int longest = pEnd - pStart + 1;
+
+	while (low >= 0 && high < length)
 	{
-		if (str[low++] != str[high--])
+		if (str[low--] != str[high++])
 		{
-			return false;
+			break;
+		}
+		else
+		{
+			if ((high - low - 1) > longest)
+			{
+				pStart = low + 1;
+				pEnd = high - 1;
+				longest = pEnd - pStart + 1;
+			}
 		}
 	}
-	return true;
+
 }
+
 
 class Solution 
 {
 public:
-	string longestPalindrome(string s)
+	string longestPalindrome(string str )
 	{
-		if (s.empty())
+		if (str.empty())
 		{
 			return string();
 		}
-		size_t length = s.size();
-		size_t pStart = 0;
-		size_t pEnd = 0;
-		for (size_t end = 0; end < length; end++)
+		size_t length = str.size();
+		int pStart = 0;
+		int pEnd = 0;
+		
+		int low = 0;
+		int high = 0;
+		for (size_t cur = 0; cur < length; cur++)
 		{
-			for (size_t start = 0; start < end; start++)
-			{
-				if ( (end -start) > (pEnd - pStart) && isPalindrome(s, start, end))
-				{
-					pStart = start;
-					pEnd = end;
-				}
-			}
+			low = cur - 1;
+			high = cur + 1;
+			isPalindrome(str, low, high, pStart, pEnd);
+
+			low = cur;
+			high = cur + 1;
+			isPalindrome(str, low, high, pStart, pEnd);
+
+			low = cur - 1;
+			high = cur;
+			isPalindrome(str, low, high, pStart, pEnd);
 		}
-		return s.substr(pStart, pEnd - pStart +1);
+
+		return str.substr(pStart, pEnd - pStart + 1);
 	}
 };
 
