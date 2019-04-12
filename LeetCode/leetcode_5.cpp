@@ -36,34 +36,41 @@ void isPalindrome(const string& str, int low, int high, int& pStart, int& pEnd)
 class Solution 
 {
 public:
-	string longestPalindrome(string str )
+	string longestPalindrome(const string& str )
 	{
-		if (str.empty())
-		{
-			return string();
-		}
-		size_t length = str.size();
-		int pStart = 0;
-		int pEnd = 0;
-		
 		int low = 0;
 		int high = 0;
-		for (size_t cur = 0; cur < length; cur++)
+		size_t length = str.size();
+		vector<vector<bool>>   arrs{ length, vector<bool>(length, false)};
+		for (size_t i = 0; i < (int)length; i++)
 		{
-			low = cur - 1;
-			high = cur + 1;
-			isPalindrome(str, low, high, pStart, pEnd);
-
-			low = cur;
-			high = cur + 1;
-			isPalindrome(str, low, high, pStart, pEnd);
-
-			low = cur - 1;
-			high = cur;
-			isPalindrome(str, low, high, pStart, pEnd);
+			arrs[i][i] = true;
+			if ( (i +1) < (int)length && str[i] == str[i+1])
+			{
+				arrs[i][i + 1] = true;
+				arrs[i + 1][i] = true;
+			}
 		}
-
-		return str.substr(pStart, pEnd - pStart + 1);
+		for ( int end = 1; end  < (int)length; end ++)
+		{
+			for (size_t start = 0; start < end; start++)
+			{
+				if (str[start] == str[end]  && arrs[start +1][end-1] == true )
+				{
+					arrs[start][end] = true;
+					if ((end - start) > (high -low) )
+					{
+						high = end;
+						low = start;
+					}
+				}
+				else
+				{
+					arrs[start][end] = false;
+				}
+			}
+		}
+		return  str.substr(low, high - low + 1);
 	}
 };
 
@@ -71,7 +78,10 @@ public:
 
 int main()
 {
-	string kkl("babad");
-	cout << Solution().longestPalindrome(kkl).c_str();
+	string kk("babad");
+
+	cout << Solution().longestPalindrome(kk).c_str();
+
+
 	return 0;
 }
