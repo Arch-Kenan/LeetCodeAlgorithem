@@ -32,47 +32,30 @@ void isPalindrome(const string& str, int low, int high, int& pStart, int& pEnd)
 
 }
 
-
-class Solution 
-{
+class Solution {
 public:
-	string longestPalindrome(const string& str )
-	{
-		int low = 0;
-		int high = 0;
-		size_t length = str.size();
-		vector<vector<bool>>   arrs{ length, vector<bool>(length, false)};
-		for (size_t i = 0; i < (int)length; i++)
+	string longestPalindrome(string s) {
+		const int N = s.size();
+		if (N == 0) return "";
+		string res = s.substr(0, 1);
+		vector<vector<bool>> dp(N, vector<bool>(N, false));
+		// s[j, i]
+		for (int i = 0; i < N; i++) 
 		{
-			arrs[i][i] = true;
-			if ( (i +1) < (int)length && str[i] == str[i+1])
+			dp[i][i] = true;
+			for (int j = 0; j < i; j++)
 			{
-				arrs[i][i + 1] = true;
-				arrs[i + 1][i] = true;
-			}
-		}
-		for ( int end = 1; end  < (int)length; end ++)
-		{
-			for (size_t start = 0; start < end; start++)
-			{
-				if (str[start] == str[end]  && arrs[start +1][end-1] == true )
+				dp[j][i] = (s[j] == s[i]) && (i == j + 1 || dp[j + 1][i - 1]);
+				if (dp[j][i] && i - j + 1 >= res.size()) 
 				{
-					arrs[start][end] = true;
-					if ((end - start) > (high -low) )
-					{
-						high = end;
-						low = start;
-					}
-				}
-				else
-				{
-					arrs[start][end] = false;
+					res = s.substr(j, i - j + 1);
 				}
 			}
 		}
-		return  str.substr(low, high - low + 1);
+		return res;
 	}
 };
+
 
 
 
