@@ -23,31 +23,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="pch.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LeetCode.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="剑指offer_36题.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="LeetCode64.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="kmpAlgorithem.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="分支测试函数.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="LeetCode_516.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="leetcode_5.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="41First Missing Positive.cpp">
+    <ClCompile Include="AimToOffer1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
