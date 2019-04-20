@@ -156,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AimToOffer1.cpp" />
+    <ClCompile Include="AimToOffer2.cpp" />
     <ClCompile Include="剑指offer_36题.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
