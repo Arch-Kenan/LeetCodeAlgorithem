@@ -35,5 +35,8 @@
     <ClCompile Include="Offer3.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="PAT1040.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
